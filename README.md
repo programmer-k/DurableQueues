@@ -23,5 +23,6 @@ Run
 ----- 
 Run the output file using `LD_PRELOAD=libvmmalloc.so.1 <executable>` (see <https://pmem.io/pmdk/manpages/linux/master/libvmmalloc/libvmmalloc.7.html> for further details regarding libvmmalloc).
 
+*****
 A note regarding the memory management: To fully use this code in a crash-recovery scenario, a persistent lock-free memory manager should be utilized. This is an orthogonal open problem which we do not address here. The solution we use is not fully persistent: we use the lock-free ssmem and the underlying libvmmalloc. Therefore, the current recovery code of all our queues is incomplete and was not tested. When a persistent lock-free memory manager will be available in the future, the queues' recovery should be accordingly adjusted.
     
