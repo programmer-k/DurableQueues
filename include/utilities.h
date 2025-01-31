@@ -8,7 +8,7 @@
 #include <climits>  //for max int
 #include <fstream>
 
-#define MAX_THREADS 17
+#define MAX_THREADS 256
 
 #define CACHE_LINE_SIZE 64
 #define CACHE_LINE_ALIGNED __attribute__((aligned (CACHE_LINE_SIZE)))
